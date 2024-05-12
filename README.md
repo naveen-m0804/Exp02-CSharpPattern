@@ -23,27 +23,33 @@ Inside the innermost loop, after calculating the value of `c`, print it followed
 ## Program:
 ```
 using System;
+
 public class Pattern
 {
     public static void Main()
     {
-        int row;
-        row=Convert.ToInt32(Console.ReadLine("Enter the number of rows: "));
-        for (int i=0;i<row;i++)
+        int row, c;
+        Console.WriteLine("Enter the number of rows: "); 
+        row = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < row; i++)
         {
-            for (int s=0;s<row-i;s++)
+            for (int s = 0; s < row - i; s++)
                 Console.Write(" ");
-                for (int j=0;j<=i;j++)
-                {
-                    if (i==0 || j==0)
-                        c=1;
-                    else
-                        c=c*(i-j+1)/j;
-                        Console.WriteLine(c+" ");
-                }
+            c = 1; // Initialized 'c' here
+            for (int j = 0; j <= i; j++)
+            {
+                if (i == 0 || j == 0)
+                    c = 1;
+                else
+                    c = c * (i - j + 1) / j;
+                Console.Write(c + " "); 
+            }
+            Console.WriteLine(); // Added this line to move to the next line
         }
     }
 }
+
 ```
 ## Output:
 ![Screenshot 2024-02-24 104229](https://github.com/naveen-m0804/Exp02-CSharpPattern/assets/117974950/8bdfba05-7abb-43d9-a1e7-a98bd06ccfea)
